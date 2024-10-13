@@ -3,7 +3,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetFacilityDetailsQuery } from "../../redux/api/facility/facilityApi";
 import Loading from "../../shared/Loading";
-import stadium from "../../assets/stadium.jpg";
+
 import { FaMapMarkerAlt, FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
 
 const FacilityDetails = () => {
@@ -30,7 +30,7 @@ const FacilityDetails = () => {
           <div className="relative w-full h-[450px] md:h-[600px] overflow-hidden rounded-t-xl">
             <img
               className="w-full h-full object-cover rounded-t-xl"
-              src={facility.image ? facility.image : stadium}
+              src={facility.image }
               alt={facility.name}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80"></div>
