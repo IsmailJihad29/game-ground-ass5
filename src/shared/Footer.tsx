@@ -43,9 +43,6 @@ const Footer = () => {
           >
             Facilitys
           </NavLink>
-          <NavLink to={"/booking"} className="uppercase text-hero font-primary">
-            Booking
-          </NavLink>
         </div>
 
         {/* <!-- Social Container --> */}

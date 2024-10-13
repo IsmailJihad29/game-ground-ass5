@@ -2,11 +2,10 @@
 import { AutoComplete, Input, Pagination, Select } from "antd";
 
 import { useGetAllFacilityQuery } from "../../redux/api/facility/facilityApi";
-import stadium from "../../assets/stadium.jpg";
 import { useNavigate } from "react-router-dom";
 import NoDataFound from "../../shared/NoDataFound";
 import { useEffect, useState } from "react";
-
+import logo from '../../assets/logo.png'
 import circle from "../../assets/circle.svg";
 import grid from "../../assets/grid.svg";
 import Loading from "../../shared/Loading";
@@ -125,7 +124,7 @@ const FacilityListingTable = () => {
                 <div className="group relative overflow-hidden w-[270px] h-[350px] bg-slate-300 rounded-3xl shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:rotate-1 hover:-translate-y-2">
                   <img
                     className="absolute inset-0 w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                    src={item.image ? item.image : stadium}
+                    src={item.image ? item.image : logo}
                     alt={item.name}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>

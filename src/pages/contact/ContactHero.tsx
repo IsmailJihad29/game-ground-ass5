@@ -1,35 +1,44 @@
+
+import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import contactHeroImage from '../../assets/contactUs.jpg'; // Replace with your actual image path
+
 const ContactHero = () => {
   return (
     <div
-      className="bg-cover bg-center"
+      className="relative bg-cover bg-center h-[85vh] flex items-center justify-center text-white"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-        // height: "calc(100vh - 100px)",
-        height: "85vh",
-        backgroundAttachment: "fixed",
+        backgroundImage: `url(${contactHeroImage})`,
       }}
     >
-      <div className="container mx-auto  h-full text-white text-center flex justify-center items-center">
-        <div className="flex flex-col gap-5">
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl "
-            style={{
-              textShadow:
-                "1px 1px 2px #26BAA4, 0 0 1em #26BAA4, 0 0 0.2em #26BAA4",
-            }}
-          >
-            Contact Us
-          </h1>
-          <p
-            className="text-xl px-8 sm:text-2xl md:text-3xl lg:text-4xl"
-            style={{
-              // textShadow: "2px 2px 4px rgba(255, 255, 255, 0.4)"
-              textShadow: "1px 1px 2px white, 0 0 1em #6173FF, 0 0 0.2em white",
-            }}
-          >
-            Provide users with a way to reach out for support or give feedback.
-          </p>
+      {/* Overlay for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent opacity-70"></div>
+
+      <div className="relative z-10 text-center p-4">
+        {/* Title with animation */}
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in font-hero text-title">
+          We're Here to Help
+        </h1>
+        {/* Tagline with animation */}
+        <p className="text-lg md:text-2xl mb-6 animate-fade-in-delayed font-primary">
+          Have any questions or need assistance? Reach out to us, and we'll be happy to support you!
+        </p>
+
+        {/* Call-to-action buttons */}
+        <div className="flex justify-center gap-4 mt-4 animate-slide-in">
+          <button className="flex items-center bg-lightBlue hover:bg-strongCyan text-white py-2 px-6 rounded-lg shadow-lg transform transition hover:scale-105">
+            <FaEnvelope className="mr-2" />
+            Send an Email
+          </button>
+          <button className="flex items-center bg-transparent border border-lightBlue hover:bg-lightBlue text-white py-2 px-6 rounded-lg shadow-lg transform transition hover:scale-105">
+            <FaPhoneAlt className="mr-2" />
+            Call Us Now
+          </button>
         </div>
+
+        {/* Decorative shapes */}
+        <div className="absolute top-0 right-0 m-4 w-32 h-32 bg-transparent border-4 border-strongCyan rounded-full animate-spin-slow"></div>
+        <div className="absolute bottom-0 left-0 m-4 w-20 h-20 bg-lightBlue rounded-full animate-bounce-slow"></div>
+        <div className="absolute bottom-0 right-0 m-6 w-16 h-16 bg-strongCyan rounded-lg animate-pulse"></div>
       </div>
     </div>
   );

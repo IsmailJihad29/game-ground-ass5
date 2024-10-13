@@ -4,7 +4,7 @@ import { RootState } from "../store";
 
 const baseQuery = fetchBaseQuery({
   // baseUrl: "http://localhost:5000/api",
-  baseUrl: "http://localhost:3000/api",
+  baseUrl: "https://sports-facility-booking-backend-jet.vercel.app/api",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState)?.user?.token;
