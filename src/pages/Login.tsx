@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
@@ -23,11 +24,7 @@ const Login = () => {
       if (res?.data?.success) {
         toast.success(res?.data?.message, { id: toastId });
       }
-      // else if (res?.error) {
-      //   toast.error(res?.error?.data?.message || "An error occurred.");
-      // } else {
-      //   toast.error("Something went wrong, please try again.");
-      // }
+  
 
       dispatch(setUser(res.data.data));
       dispatch(setToken(res.data.token));
