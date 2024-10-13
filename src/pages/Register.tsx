@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Form, Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { useState } from "react";
@@ -17,7 +18,7 @@ const Register = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const onFinish = async (values: any) => {
-    // const toastId = toast.loading("Signing in");
+ 
 
     if (user) {
       setUserRole(user.role);
