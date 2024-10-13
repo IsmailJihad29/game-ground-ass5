@@ -1,5 +1,5 @@
 import { useGetAllFacilityQuery } from "../redux/api/facility/facilityApi";
-import stadium from "../assets/stadium.jpg";
+import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 
@@ -56,7 +56,7 @@ const FeaturedFacilities = () => {
               <div className="relative h-72 w-full">
                 <img
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src={item?.image ? item?.image : stadium}
+                  src={item?.image ? item?.image : logo}
                   alt={item.name}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
