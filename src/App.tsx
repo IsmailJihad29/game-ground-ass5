@@ -1,14 +1,12 @@
-
-import MainLayout from './components/layout/MainLayout'
+import "./App.css";
+import MainLayout from "./components/layout/MainLayout";
 
 function App() {
-
-
   return (
-    <div className=' max-w-8xl mx-auto'>
-      <MainLayout/>
-    </div>
-  )
+    <>
+      <MainLayout />
+    </>
+  );
 }
 
-export default App
+export default App;

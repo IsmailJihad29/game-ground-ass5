@@ -1,41 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
-}
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Protest+Strike&family=Spicy+Rice&display=swap');
+
+.font-hero {
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .font-primary {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.font-secondery {
-  font-family: "Playfair Display", serif;
+  font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
-.font-header {
-  font-family: "Montserrat Alternates", system-ui;
-  font-weight: 400;
-  font-style: normal;
+.font-title {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+.text-primary {
+  color: #ffffea;
 }
-
-
-
-.active-link {
-  color: #ffae00;
+.text-hero {
+  @apply bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text;
 }
-.active-link {
-  color: #ffae00;
+.text-title {
+  @apply bg-gradient-to-r from-[#fec163] to-[#de4313] text-transparent bg-clip-text;
 }
-
-
-
-
-
+.button-primary {
+  @apply relative overflow-hidden rounded-md shadow-md shadow-gray-400/50 bg-gradient-to-r from-blue-500 to-cyan-500 py-3 px-5 text-lg font-medium uppercase tracking-wider text-white mt-8 hover:scale-105 transition-transform duration-300 ease-in-out;
+}
+.dashboard-bg{
+  @apply bg-gradient-to-r from-[#4ca1af] to-[#c4e0e5]
+}

@@ -1,22 +1,24 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { RootState } from "../store";
+// import { RootState } from "../store";
+
+const baseQuery = fetchBaseQuery({
+  // baseUrl: "http://localhost:5000/api",
+  baseUrl: "http://localhost:3000/api",
+  credentials: "include",
+  prepareHeaders: (headers, { getState }) => {
+    const token = (getState() as RootState)?.user?.token;
+    if (token && token) {
+      headers.set("authorization", `Bearer ${token}`);
+    }
+
+    return headers;
+  },
+});
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "https://nature-nest-server.vercel.app",
-    prepareHeaders: (headers) => {
-      headers.set("Content-Type", "application/json"); // Add this line
-      return headers;
-    },
-  }),
-  tagTypes: ["nursery"],
+  baseQuery: baseQuery,
+  tagTypes: ["facility", "availability", "userBooking"],
   endpoints: () => ({}),
-  //   completeTodos: builder.mutation({
-  //     query: (options) => {
-  //       return { url: `/task/${options.id}`, method: "PUT", body: options.data };
-  //     },
-  //     invalidatesTags: ["todo"],
-  //   }),
-
 });
-
