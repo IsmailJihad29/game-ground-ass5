@@ -363,7 +363,7 @@ const AboutHistoryAndMilestones = () => {
         />
 
         {/* Custom CSS for improved responsiveness */}
-        <style jsx>{`
+        <style >{`
           .custom-timeline {
             padding: 0 1rem;
           }
