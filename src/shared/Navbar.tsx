@@ -60,7 +60,7 @@ const Navbar = () => {
       ),
     },
   ];
-
+  const isActive = (path: string) => location.pathname === path;
   return (
     <div className="bg-[#001F3F]">
       <div className="navbar container mx-auto">
@@ -82,31 +82,37 @@ const Navbar = () => {
                 to="/"
                 className="font-semibold text-[#0099FF]"
               >
-                Home
+               <button>Home</button>
               </Link>
             </li>
             <li>
               <Link
-                to="/about-us"
-                className="font-semibold text-[#0099FF]"
+                 to="/about-us"
+                 className={`font-semibold ${
+                   isActive("/about-us") ? "text-white" : "text-[#0099FF]"
+                 }`}
               >
-                About Us
+                <button>About Us</button>
               </Link>
             </li>
             <li>
               <Link
-                to="/contact-us"
-                className="text-[#0099FF] font-semibold"
+               to="/contact-us"
+                className={`font-semibold ${
+                  isActive("/contact-us") ? "text-white" : "text-[#0099FF]"
+                }`}
               >
-                Contact Us
+               <button>Contact</button>
               </Link>
             </li>
             <li>
               <Link
-                to="/facility-listing"
-                className="text-[#0099FF] font-semibold"
+              to="/facility-listing"
+               className={`font-semibold ${
+                 isActive("/facility-listing") ? "text-white" : "text-[#0099FF]"
+               }`}
               >
-                Facility Listing
+                <button>Facilies</button>
               </Link>
             </li>
           </ul>

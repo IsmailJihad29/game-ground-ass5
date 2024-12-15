@@ -2,8 +2,8 @@
 export default {
     darkMode: ["class"],
     content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}", // Update to match your project's structure
+    "./public/index.html",
   ],
 
   plugins: [

@@ -60,6 +60,7 @@ const facilityApi = baseApi.injectEndpoints({
         };
       },
     }),
+    
     getFacilityDetails: builder.query({
       query: (id) => {
         return {

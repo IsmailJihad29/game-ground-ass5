@@ -30,7 +30,7 @@ const FeaturedFacilities = () => {
   }
 
   return (
-    <div className="bg-neutral-100 dark:bg-neutral-800 py-10 px-5 ">
+    <div className="bg-white dark:bg-neutral-800 py-10 px-5 ">
       <div className="container py-16 mx-auto px-6 lg:px-20">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -64,23 +64,24 @@ const FeaturedFacilities = () => {
 
               {/* Facility Content */}
               <div className="absolute bottom-0 p-6 w-full text-center">
-                <h1 className="text-2xl font-semibold text-white font-title uppercase tracking-wide mb-2">
+                <h1 className="text-2xl font-semibold text-hero  font-title uppercase tracking-wide mb-2">
                   {item.name}
                 </h1>
-                <p className="text-sm text-primary font-primary font-semibold opacity-90 mb-4">
+                <p className="text-sm text-white font-primary font-semibold opacity-90 mb-4">
                   {item.description.length > 50
                     ? `${item.description.substring(0, 50)}...`
                     : item.description}
                 </p>
-                <p className="text-teal-400 text-xl font-primary font-bold mb-4">
+                <p className="text-white text-xl font-primary font-bold mb-4">
                   $ {item.pricePerHour} / Hour
                 </p>
                 <button
                   onClick={() => navigate(`/facility-listing/${item._id}`)}
-                  className="bg-teal-500 hover:bg-teal-600 py-2 px-5 text-sm font-semibold text-white rounded-full transition-colors duration-300"
+                  className="border border-blue-400   hover:bg-gradient-to-r from-blue-400 to-cyan-400  py-2 px-5 text-sm font-semibold text-white rounded-full transition-colors duration-300"
                 >
                   View Details
                 </button>
+                
               </div>
             </div>
           ))}
