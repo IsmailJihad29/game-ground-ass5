@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import "../design/heroDesign.css";
 import hero from "../assets/hero/Soccer-Ball-PNG-Clipart-Background.png";
+import heroFootball from "../assets/hero/heroFootball.png";
 
 import footballGround from "../assets/hero/football-ground.jpg";
 import swimingPool from "../assets/hero/swiming-pool.jpg";
@@ -27,7 +28,7 @@ const Hero = () => {
 
   return (
     <div
-      className="h-screen flex items-center justify-center relative px-4 md:px-12 bg-white dark:bg-gray-800 bg-cover bg-center"
+      className="h-screen flex items-center justify-center relative px-4 md:px-12 bg-white dark:bg-gray-700 bg-cover bg-center"
       style={{
         backgroundImage: `url(${hero})`,
         backgroundRepeat: "no-repeat",
@@ -41,7 +42,7 @@ const Hero = () => {
           className="flex flex-col justify-center w-[90%] md:w-[45%] mx-auto text-center md:text-left animate-fade-in"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-hero font-hero text-blue-600">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-hero font-hero text-blue-600">
             Welcome to <span className="text-green-500">GameGround!</span>
           </h2>
           <p className="text-lg md:text-xl font-medium text-gray-700 mt-4 font-title dark:text-white">
@@ -108,7 +109,8 @@ const Hero = () => {
 
       {/* Floating Elements */}
       <div className="absolute top-5 left-5 w-10 h-10 md:w-16 md:h-16 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
-      <div className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 bg-green-400 rounded-full opacity-30 animate-pulse"></div>
+      {/* <div className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 bg-green-400 rounded-full opacity-30 animate-bounce"></div> */}
+      <img src={heroFootball} className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 animate-bounce" alt="" />
     </div>
   );
 };

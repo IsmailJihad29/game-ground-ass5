@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   LogoutOutlined,
   MoonOutlined,
@@ -14,7 +14,7 @@ import { toast } from "sonner";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // Added menuOpen state
+  const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useAppSelector(selectCurrentUser);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    toast.success("Successfully Logout.");
+    toast.success("Successfully Logged Out.");
   };
 
   const menuItems: MenuProps["items"] = [
@@ -39,7 +39,7 @@ const Navbar = () => {
       key: "1",
       label: (
         <div
-          className="flex gap-2 items-center p-2 hover:bg-primary  hover:text-white rounded"
+          className="flex gap-2 items-center p-2 hover:bg-primary hover:text-white rounded"
           onClick={() => navigate(`${user.role}/dashboard`)}
         >
           <UserOutlined />
@@ -60,80 +60,72 @@ const Navbar = () => {
       ),
     },
   ];
+
   const isActive = (path: string) => location.pathname === path;
+
   return (
-    <div className="bg-[#001F3F]">
-      <div className="navbar container mx-auto">
-        {/* Left: Logo */}
-        <div className="navbar-start">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Logo" className="size-14" />
-            <span className="text-xl font-hero font-bold text-[#0099FF]">
-             GAME GROUND
-            </span>
+    <nav className="bg-[#001F3F] text-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between px-4 py-1">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Logo" className="size-16" />
+          <span className="text-xl font-bold text-hero font-hero">
+            GAME GROUND
+          </span>
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center space-x-6 font-text">
+          <Link
+            to="/"
+            className={`font-semibold ${
+              isActive("/") ? "text-white" : "text-[#0099FF]"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/about-us"
+            className={`font-semibold ${
+              isActive("/about-us") ? "text-white" : "text-[#0099FF]"
+            }`}
+          >
+            About Us
+          </Link>
+          <Link
+            to="/contact-us"
+            className={`font-semibold ${
+              isActive("/contact-us") ? "text-white" : "text-[#0099FF]"
+            }`}
+          >
+            Contact Us
+          </Link>
+          <Link
+            to="/facility-listing"
+            className={`font-semibold ${
+              isActive("/facility-listing") ? "text-white" : "text-[#0099FF]"
+            }`}
+          >
+            Facilities
           </Link>
         </div>
 
-        {/* Center: Links */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-4 font-primary">
-            <li>
-              <Link
-                to="/"
-                className="font-semibold text-[#0099FF]"
-              >
-               <button>Home</button>
-              </Link>
-            </li>
-            <li>
-              <Link
-                 to="/about-us"
-                 className={`font-semibold ${
-                   isActive("/about-us") ? "text-white" : "text-[#0099FF]"
-                 }`}
-              >
-                <button>About Us</button>
-              </Link>
-            </li>
-            <li>
-              <Link
-               to="/contact-us"
-                className={`font-semibold ${
-                  isActive("/contact-us") ? "text-white" : "text-[#0099FF]"
-                }`}
-              >
-               <button>Contact</button>
-              </Link>
-            </li>
-            <li>
-              <Link
-              to="/facility-listing"
-               className={`font-semibold ${
-                 isActive("/facility-listing") ? "text-white" : "text-[#0099FF]"
-               }`}
-              >
-                <button>Facilies</button>
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Right: Theme Toggle & Avatar */}
-        <div className="navbar-end space-x-4">
+        {/* Right Side: Theme Toggle and Avatar */}
+        <div className="flex items-center space-x-4">
           {/* Theme Toggle */}
           {theme ? (
             <SunOutlined
-              className="text-[#0099FF] text-3xl cursor-pointer"
+              className="text-[#0099FF] text-2xl cursor-pointer"
               onClick={() => setTheme(false)}
             />
           ) : (
             <MoonOutlined
-              className="text-[#0099FF] text-3xl cursor-pointer"
+              className="text-[#0099FF] text-2xl cursor-pointer"
               onClick={() => setTheme(true)}
             />
           )}
 
-          {/* User Dropdown */}
+          {/* User Section */}
           {user && user?.role ? (
             <Dropdown menu={{ items: menuItems }} trigger={["click"]}>
               <Avatar
@@ -149,74 +141,109 @@ const Navbar = () => {
               </Avatar>
             </Dropdown>
           ) : (
-            <div className="space-x-4 ">
+            <div className="space-x-4 hidden lg:flex items-center">
               <Link
                 to="/login"
-                className="  text-[#0099FF] font-bold hover:text-white"
+                className="text-[#0099FF] font-bold hover:text-white"
               >
                 Login
               </Link>
+             
             </div>
           )}
-        </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="navbar-end lg:hidden">
+          {/* Mobile Menu Toggle */}
           <button
-            className="btn btn-square btn-ghost"
-            onClick={() => setMenuOpen(!menuOpen)} // Toggle menuOpen state
+            className="lg:hidden text-[#0099FF] text-2xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Mobile Menu"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            {menuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden flex flex-col space-y-4 p-4 bg-[#001F3F]">
-          <Link to="/about-us" className="text-[#0099FF]">
-            About Us
-          </Link>
-          <Link to="/contact-us" className="text-[#0099FF]">
-            Contact Us
-          </Link>
-          <Link to="/facility-listing" className="text-[#0099FF]">
-            Facility Listing
-          </Link>
-          <Link to="/login" className="text-[#0099FF]">
-            Login
-          </Link>
-          <Link to="/register" className="text-[#0099FF]">
-            Sign Up
-          </Link>
+        <div className="lg:hidden bg-[#001F3F] text-center">
+          <div className="flex flex-col space-y-4 py-4">
+            <Link
+              to="/"
+              className="text-[#0099FF] font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about-us"
+              className="text-[#0099FF] font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/contact-us"
+              className="text-[#0099FF] font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/facility-listing"
+              className="text-[#0099FF] font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              Facilities
+            </Link>
+
+            {/* Conditionally render login and signup buttons */}
+            {!user && (
+              <>
+                <Link
+                  to="/login"
+                  className="text-[#0099FF] font-semibold"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Login
+                </Link>
+                
+              </>
+            )}
+          </div>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
