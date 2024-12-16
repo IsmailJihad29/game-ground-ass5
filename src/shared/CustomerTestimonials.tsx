@@ -1,17 +1,18 @@
 import { Avatar, Carousel } from "antd";
 import { testimonialData } from "./fakeData";
-
+import logo from "../assets/logo.png";
 const CustomerTestimonials = () => {
   return (
     <div className="bg-white dark:bg-gray-700 py-10 ">
       <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8 ">
         {/* Left section with heading */}
 
-        <div className="w-full md:w-[50%] flex justify-center items-center p-4">
+        <div
+          className="w-full md:w-[50%] flex justify-center items-center p-4"
+          data-aos="fade-right"
+        >
           <div>
-            <p className="text-title">
-              Hear From Our Customers
-            </p>
+            <p className="text-title">Hear From Our Customers</p>
             <h2 className="text-3xl text-hero font-title md:text-4xl leading-tight text-veryDarkViolet dark:text-cyanLight font-bold">
               Experience that Speaks for Itself
             </h2>
@@ -23,12 +24,12 @@ const CustomerTestimonials = () => {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="w-full md:w-[50%] relative">
+        <div className="w-full md:w-[50%] relative" data-aos="fade-left">
           {/* Rotating Glowing Border */}
           <div className="absolute inset-0 rounded-lg border-[3px] border-gradient-to-r from-lightBlue to-blue-500 animate-spin-slow"></div>
 
-          {/* Testimonial Box */}
-          <div className="relative backdrop-blur-lg bg-opacity-10 bg-blue-400 dark:bg-gray-700 h-full w-full p-8 rounded-lg shadow-xl border border-lightBlue transition-transform transform hover:scale-105">
+         
+          <div className="relative  h-full w-full p-8 rounded-lg shadow-xl border border-lightBlue transition-transform transform hover:scale-105">
             <Carousel autoplay dots dotPosition="bottom">
               {testimonialData?.map((item, indx) => (
                 <figure
@@ -49,6 +50,13 @@ const CustomerTestimonials = () => {
                 </figure>
               ))}
             </Carousel>
+
+            {/* Small Icon in the bottom right */}
+            <div className="absolute bottom-4 right-4">
+              <img src={logo} className="w-16 h-16 rounded-full shadow-lg" />
+            </div>
+            
+
           </div>
         </div>
       </div>
