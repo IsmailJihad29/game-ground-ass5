@@ -3,13 +3,13 @@ import { testimonialData } from "./fakeData";
 
 const CustomerTestimonials = () => {
   return (
-    <div className="dark:bg-gradient-to-b from-slate-800 to-slate-900 bg-gradient-to-b from-lightBlue to-blue-900 py-16">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8">
+    <div className="bg-white dark:bg-gray-700 py-10 ">
+      <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8 ">
         {/* Left section with heading */}
 
         <div className="w-full md:w-[50%] flex justify-center items-center p-4">
           <div>
-            <p className="uppercase font-hero text-primary font-medium mb-2 tracking-wider text-lightBlue text-xl">
+            <p className="text-title">
               Hear From Our Customers
             </p>
             <h2 className="text-3xl text-hero font-title md:text-4xl leading-tight text-veryDarkViolet dark:text-cyanLight font-bold">
@@ -28,7 +28,7 @@ const CustomerTestimonials = () => {
           <div className="absolute inset-0 rounded-lg border-[3px] border-gradient-to-r from-lightBlue to-blue-500 animate-spin-slow"></div>
 
           {/* Testimonial Box */}
-          <div className="relative backdrop-blur-lg bg-opacity-10 bg-darkViolet dark:bg-slate-700 h-full w-full p-8 rounded-lg shadow-xl border border-lightBlue transition-transform transform hover:scale-105">
+          <div className="relative backdrop-blur-lg bg-opacity-10 bg-blue-400 dark:bg-gray-700 h-full w-full p-8 rounded-lg shadow-xl border border-lightBlue transition-transform transform hover:scale-105">
             <Carousel autoplay dots dotPosition="bottom">
               {testimonialData?.map((item, indx) => (
                 <figure
@@ -40,7 +40,7 @@ const CustomerTestimonials = () => {
                     src={item?.photo}
                     className="mb-4 transition-transform transform hover:scale-110 rounded-full shadow-lg"
                   />
-                  <blockquote className="text-lg italic text-white leading-6 mb-2 font-primary">
+                  <blockquote className="text-lg italic text-subtitle leading-6 mb-2 font-primary">
                     "{item?.comment}"
                   </blockquote>
                   <p className="text-lg font-medium text-lightBlue font-title text-hero">
