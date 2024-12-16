@@ -108,9 +108,18 @@ const Hero = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-5 left-5 w-10 h-10 md:w-16 md:h-16 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
+      <img
+        src={heroFootball}
+        className="absolute floating-pattern w-10 h-10 md:w-16 md:h-16 rounded-full top-5 left-5"
+        alt="floating football"
+      />
+
       {/* <div className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 bg-green-400 rounded-full opacity-30 animate-bounce"></div> */}
-      <img src={heroFootball} className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 animate-bounce" alt="" />
+      <img
+        src={heroFootball}
+        className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 animate-bounce"
+        alt=""
+      />
     </div>
   );
 };
