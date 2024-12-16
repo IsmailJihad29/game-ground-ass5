@@ -48,7 +48,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl font-medium text-gray-700 mt-4 font-title dark:text-white">
             "Where Every Game Comes Alive!"
           </p>
-          <p className="text-sm md:text-base lg:text-lg text-gray-700 mt-4 font-text dark:text-white">
+          <p className="text-subtitle">
             Discover top-notch sports facilities and book your slots easily.
             Experience a seamless platform for all your favorite sports!
           </p>
@@ -61,7 +61,7 @@ const Hero = () => {
             </button>
             <button
               onClick={() => navigate("/contact")}
-              className="button-secondary px-6 py-3 text-sm md:text-base"
+              className="button-secondary  "
             >
               Contact Us
             </button>

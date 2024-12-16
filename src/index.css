@@ -31,14 +31,20 @@ body {
 .text-hero {
   @apply bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text;
 }
-.text-title {
-  @apply bg-gradient-to-r from-[#fec163] to-[#de4313] text-transparent bg-clip-text;
+
+.text-subtitle{
+  @apply text-sm md:text-base lg:text-lg text-gray-700 mt-4 font-primary dark:text-white max-w-2xl mx-auto
 }
+.text-title{
+  @apply text-3xl md:text-5xl  font-extrabold leading-tight text-hero font-hero
+}
+
+
 .button-primary {
-  @apply relative overflow-hidden rounded-md shadow-md shadow-gray-400/50 bg-gradient-to-r from-blue-500 to-cyan-500 py-3 px-5 text-lg font-medium uppercase tracking-wider text-white  hover:scale-105 transition-transform duration-300 ease-in-out;
+  @apply relative overflow-hidden rounded-md shadow-md shadow-gray-400/50 bg-gradient-to-r from-blue-500 to-cyan-500 py-2 px-3 text-lg font-bold uppercase tracking-wider text-white  hover:scale-105 transition-transform duration-300 ease-in-out;
 }
 .button-secondary {
-  @apply bg-gradient-to-r from-blue-400 to-green-400 text-white font-bold  px-6 rounded-lg shadow-lg hover:shadow-xl hover:from-green-400 hover:to-blue-400 transition-all duration-300 btn-md
+  @apply bg-gradient-to-r from-blue-400 to-green-400 items-center text-white font-bold  px-3 rounded-lg shadow-lg hover:shadow-xl hover:from-green-400 hover:to-blue-400 transition-all duration-300 btn-sm 
 }
 
 

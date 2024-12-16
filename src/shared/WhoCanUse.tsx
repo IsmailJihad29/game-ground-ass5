@@ -1,10 +1,12 @@
-
 import amateurPlayer from "../assets/Amateur-Players.png";
 import sportsTeamAndClub from "../assets/Sports-Teams&Clubs.png";
 import eventOrganization from "../assets/Event-Organizers.png";
 import schoolAndCollage from "../assets/school.png";
 import corporationTeam from "../assets/team.png";
 import friendsAndFamily from "../assets/friends.png";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import AOS from "aos";
 
 const whoCanUseData = [
   {
@@ -40,43 +42,62 @@ const whoCanUseData = [
 ];
 
 const WhoCanUse = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+
   return (
-    <div className="bg-slate-50 dark:bg-slate-700 py-16">
+    <div className="bg-white  dark:bg-gray-700 py-20 ">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h3 className="text-4xl font-bold font-hero text-hero dark:text-white">
+        <div
+          className="text-center mb-20"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h3 className="text-title">
             Unlock Your Game Potential!
           </h3>
-          <p className="mt-4 text-lg text-neutral-600 dark:text-primary font-primary max-w-2xl mx-auto">
+          <p className="text-subtitle">
             No matter who you are, GameGround is your go-to platform for seamless sports facility booking!
           </p>
         </div>
 
         {/* User Types Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-20 w-[70%] md:w-full md:gap-5  mx-auto">
           {whoCanUseData.map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-white dark:bg-slate-600 rounded-lg shadow-lg p-6 text-center transition-transform duration-300 transform hover:scale-105"
-            >
-              {/* Image */}
-              <img
-                className="w-28 h-28 mx-auto mb-4 rounded-full border-4 border-teal-600 dark:border-teal-400 transition-transform duration-300 transform hover:scale-110"
-                src={item.image}
-                alt={item.name}
-              />
-              {/* Name */}
-              <h4 className="text-xl font-semibold font-title dark:text-white">
-                {item.name}
-              </h4>
-              {/* Title */}
-              <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                {item.title}
-              </p>
-              {/* Decorative Element */}
-              <div className="absolute inset-0 border-2 border-transparent rounded-lg hover:border-teal-600 transition-all duration-300"></div>
-            </div>
+           <div
+           key={index}
+           className="relative flex flex-col items-center bg-white dark:bg-neutral-800 rounded-lg shadow-lg  group transform transition-all duration-300 hover:scale-105"
+           style={{
+             borderBottom: '4px solid transparent', 
+             borderImage: 'linear-gradient(to right, #42A5F5, #66BB6A)',
+             borderImageSlice: 1, 
+             
+           }}
+           data-aos="fade-up"
+           data-aos-delay={index * 100}
+         >
+           {/* Image Overlap */}
+           <div className="relative -mt-12 w-24 h-24 bg-white rounded-lg shadow-md border-4 border-white ">
+             <img
+               src={item.image}
+               alt={item.name}
+               className="w-full h-full object-cover"
+             />
+           </div>
+         
+           {/* Content */}
+           <div className="p-6 text-center">
+             <h4 className="text-lg  font-semibold font-title text-hero   dark:text-white mb-2">
+               {item.name}
+             </h4>
+             <p className="text-sm font-primary text-neutral-600 dark:text-neutral-300">
+               {item.title}
+             </p>
+           </div>
+         </div>
+         
           ))}
         </div>
       </div>
@@ -85,11 +106,3 @@ const WhoCanUse = () => {
 };
 
 export default WhoCanUse;
-
-
-
-
-
-
-
-

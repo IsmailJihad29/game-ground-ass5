@@ -43,13 +43,13 @@ const FeaturedFacilities = () => {
         {/* Header Section */}
         <div className="text-center mb-10">
           <h3
-            className="text-4xl font-bold text-hero  font-hero"
+            className="text-title"
             data-aos="fade-up"
           >
             Top Featured Facilities
           </h3>
           <p
-            className="text-lg text-gray-700 dark:text-white max-w-2xl mx-auto mt-4 font-primary"
+            className="text-sm md:text-base lg:text-lg text-gray-700 mt-4 font-primary dark:text-white max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -105,6 +105,12 @@ const FeaturedFacilities = () => {
             </div>
           ))}
         </div>
+        <div className="text-center mt-4" data-aos="fade-up"
+          data-aos-delay="500">
+  <button className="mt-4 button-primary">
+    See More
+  </button>
+</div>
       </div>
     </div>
   );
