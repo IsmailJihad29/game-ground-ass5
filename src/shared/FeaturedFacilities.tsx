@@ -1,7 +1,11 @@
+
 import { useGetAllFacilityQuery } from "../redux/api/facility/facilityApi";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import AOS from "aos";
 
 interface TFacilities {
   index: number;
@@ -25,19 +29,30 @@ const FeaturedFacilities = () => {
     isDeleted: false,
   });
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   if (isLoading || isError) {
     return <Loading />;
   }
 
   return (
-    <div className="bg-white dark:bg-neutral-800 py-10 px-5 ">
+    <div className="bg-white dark:bg-gray-700 py-8 px-5">
       <div className="container py-16 mx-auto px-6 lg:px-20">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold text-hero dark:text-white font-hero">
+        <div className="text-center mb-10">
+          <h3
+            className="text-4xl font-bold text-hero  font-hero"
+            data-aos="fade-up"
+          >
             Top Featured Facilities
           </h3>
-          <p className="text-lg text-neutral-600 dark:text-primary max-w-2xl mx-auto mt-4 font-primary">
+          <p
+            className="text-lg text-gray-700 dark:text-white max-w-2xl mx-auto mt-4 font-primary"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             Explore our top-rated sports venues with a handpicked selection of
             popular facilities. Each facility is showcased with high-quality
             images, names, and a brief description to help you find the perfect
@@ -46,11 +61,16 @@ const FeaturedFacilities = () => {
         </div>
 
         {/* Facilities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           {facilities?.data?.map((item: TFacilities) => (
             <div
               key={item._id}
-              className="group relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105"
+              className="group relative rounded-lg overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105 bg-gray-100 dark:bg-neutral-700"
+              data-aos="zoom-in"
             >
               {/* Facility Image */}
               <div className="relative h-72 w-full">
@@ -63,25 +83,24 @@ const FeaturedFacilities = () => {
               </div>
 
               {/* Facility Content */}
-              <div className="absolute bottom-0 p-6 w-full text-center">
-                <h1 className="text-2xl font-semibold text-hero  font-title uppercase tracking-wide mb-2">
+              <div className="absolute bottom-0 p-6 w-full text-center text-white">
+                <h1 className="text-2xl font-semibold font-title uppercase tracking-wide mb-2">
                   {item.name}
                 </h1>
-                <p className="text-sm text-white font-primary font-semibold opacity-90 mb-4">
+                <p className="text-sm font-primary font-semibold opacity-90 mb-4">
                   {item.description.length > 50
                     ? `${item.description.substring(0, 50)}...`
                     : item.description}
                 </p>
-                <p className="text-white text-xl font-primary font-bold mb-4">
+                <p className="text-xl font-primary font-bold mb-4">
                   $ {item.pricePerHour} / Hour
                 </p>
                 <button
                   onClick={() => navigate(`/facility-listing/${item._id}`)}
-                  className="border border-blue-400   hover:bg-gradient-to-r from-blue-400 to-cyan-400  py-2 px-5 text-sm font-semibold text-white rounded-full transition-colors duration-300"
+                  className="button-secondary"
                 >
                   View Details
                 </button>
-                
               </div>
             </div>
           ))}
@@ -92,7 +111,3 @@ const FeaturedFacilities = () => {
 };
 
 export default FeaturedFacilities;
-
-
-
-

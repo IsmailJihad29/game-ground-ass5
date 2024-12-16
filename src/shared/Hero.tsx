@@ -114,7 +114,7 @@ const Hero = () => {
         alt="floating football"
       />
 
-      {/* <div className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 bg-green-400 rounded-full opacity-30 animate-bounce"></div> */}
+      
       <img
         src={heroFootball}
         className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 animate-bounce"
