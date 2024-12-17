@@ -6,11 +6,13 @@
 import MissionStatementSection from "./MissionStatementSection ";
 
 
+
 const AboutUs = () => {
   return (
     <div>
       {/* <AboutHero /> */}
       <MissionStatementSection/>
+
       {/* <AboutTeamSection />
       <AboutHistoryAndMilestones/>
       <CommunityEngagement/>
