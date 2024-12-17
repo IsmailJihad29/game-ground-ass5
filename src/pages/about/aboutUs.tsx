@@ -1,8 +1,8 @@
-import AboutContactInformation from "./AboutContactInformation";
-import AboutHero from "./AboutHero";
-import AboutHistoryAndMilestones from "./AboutHistoryAndMilestones";
-import AboutTeamSection from "./AboutTeamSection";
-import CommunityEngagement from "./CommunityEngagement";
+// import AboutContactInformation from "./AboutContactInformation";
+// import AboutHero from "./AboutHero";
+// import AboutHistoryAndMilestones from "./AboutHistoryAndMilestones";
+// import AboutTeamSection from "./AboutTeamSection";
+// import CommunityEngagement from "./CommunityEngagement";
 import MissionStatementSection from "./MissionStatementSection ";
 
 

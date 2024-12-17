@@ -1,6 +1,7 @@
 import { Avatar, Carousel } from "antd";
 import { testimonialData } from "./fakeData";
 import logo from "../assets/logo.png";
+
 const CustomerTestimonials = () => {
   return (
     <div className="bg-white dark:bg-gray-900 py-10 ">
@@ -24,11 +25,20 @@ const CustomerTestimonials = () => {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="w-full md:w-[50%] relative" data-aos="fade-left">
-          {/* Rotating Glowing Border */}
-          <div className="absolute inset-0 rounded-lg border-[3px] border-gradient-to-r from-lightBlue to-blue-500 animate-spin-slow"></div>
 
-          <div className="relative  h-full w-full p-8 rounded-lg shadow-xl border border-lightBlue transition-transform transform hover:scale-105">
+        <div className=" w-[60%] mx-auto mt-10" data-aos="zoom-in">
+          <div className="absolute -top-8 -left-8 w-36 h-36 bg-gradient-to-br from-blue-400 to-blue-500 opacity-20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+          <div className="absolute -bottom-8 -right-8 w-36 h-36 bg-gradient-to-br from-green-400 to-green-500 opacity-20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+
+          {/* Card with Animation */}
+          <div className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 sm:p-12 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+            {/* Floating Abstract Icons */}
+            <div className="absolute top-6 left-6 w-8 h-8 bg-blue-400 opacity-50 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-6 right-6   rounded-full animate-bounce delay-200">
+              {" "}
+              <img src={logo} className="w-16 h-16 rounded-full shadow-lg" />
+            </div>
+
             <Carousel autoplay dots dotPosition="bottom">
               {testimonialData?.map((item, indx) => (
                 <figure
@@ -49,11 +59,6 @@ const CustomerTestimonials = () => {
                 </figure>
               ))}
             </Carousel>
-
-            {/* Small Icon in the bottom right */}
-            <div className="absolute bottom-4 right-4">
-              <img src={logo} className="w-16 h-16 rounded-full shadow-lg" />
-            </div>
           </div>
         </div>
       </div>
