@@ -49,7 +49,7 @@ const WhoCanUse = () => {
   }, []);
 
   return (
-    <div className="bg-white  dark:bg-gray-700 py-20 ">
+    <div className="bg-white  dark:bg-gray-900 py-20 ">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Header */}
         <div
@@ -100,7 +100,7 @@ const WhoCanUse = () => {
             //  </div>
             <div
               key={index}
-              className="relative flex flex-col items-center bg-white dark:bg-neutral-800 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-neutral-300 dark:hover:scale-110 dark:hover:shadow-xl dark:hover:shadow-blue-500"
+              className="relative flex flex-col items-center   hover:scale-105 hover:shadow-neutral-300 dark:hover:scale-110 dark:hover:shadow-xl  bg-white dark:bg-gray-800 rounded-2xl shadow-lg  text-center  group transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
               style={{
                 borderBottom: "4px solid transparent",
                 borderImage: "linear-gradient(to right, #42A5F5, #66BB6A)",

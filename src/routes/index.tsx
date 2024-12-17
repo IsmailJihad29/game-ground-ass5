@@ -20,7 +20,7 @@ import AdminDashboard from "../pages/dashboard/admin/AdminDashboard";
 import AdminMainContent from "../pages/dashboard/admin/AdminContent";
 import AdminBooking from "../pages/dashboard/admin/AdminBooking";
 import AdminFacilityManagement from "../pages/dashboard/admin/AdminFacilityManagement";
-import AboutUs from "../pages/about/aboutUs";
+import AboutUs from "../pages/about/AboutUs";
 import UpcomingTournaments from "@/shared/UpcomingTournaments";
 
 const router = createBrowserRouter([

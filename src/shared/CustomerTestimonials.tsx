@@ -3,7 +3,7 @@ import { testimonialData } from "./fakeData";
 import logo from "../assets/logo.png";
 const CustomerTestimonials = () => {
   return (
-    <div className="bg-white dark:bg-gray-700 py-10 ">
+    <div className="bg-white dark:bg-gray-900 py-10 ">
       <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8 ">
         {/* Left section with heading */}
 
@@ -28,7 +28,6 @@ const CustomerTestimonials = () => {
           {/* Rotating Glowing Border */}
           <div className="absolute inset-0 rounded-lg border-[3px] border-gradient-to-r from-lightBlue to-blue-500 animate-spin-slow"></div>
 
-         
           <div className="relative  h-full w-full p-8 rounded-lg shadow-xl border border-lightBlue transition-transform transform hover:scale-105">
             <Carousel autoplay dots dotPosition="bottom">
               {testimonialData?.map((item, indx) => (
@@ -55,8 +54,6 @@ const CustomerTestimonials = () => {
             <div className="absolute bottom-4 right-4">
               <img src={logo} className="w-16 h-16 rounded-full shadow-lg" />
             </div>
-            
-
           </div>
         </div>
       </div>

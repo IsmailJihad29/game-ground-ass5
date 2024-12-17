@@ -1,5 +1,3 @@
-
-
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -17,13 +15,10 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <div className="dark:bg-gray-700 bg-white px-10">
+    <div className="dark:bg-gray-900 bg-white px-10">
       <div className="container mx-auto py-16 px-8">
         {/* Header Section */}
-        <div
-          className="mb-16 text-center"
-          data-aos="fade-up"
-        >
+        <div className="mb-16 text-center" data-aos="fade-up">
           <h2 className="text-title">Booking Made Easy</h2>
           <p className="text-subtitle">
             Learn how to book sports facilities with our simple, step-by-step

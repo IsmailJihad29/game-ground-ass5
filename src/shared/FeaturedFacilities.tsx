@@ -1,4 +1,3 @@
-
 import { useGetAllFacilityQuery } from "../redux/api/facility/facilityApi";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
@@ -38,14 +37,11 @@ const FeaturedFacilities = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-700 py-8 px-5">
+    <div className="bg-white dark:bg-gray-900 py-8 px-5">
       <div className="container py-16 mx-auto px-6 lg:px-20">
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h3
-            className="text-title"
-            data-aos="fade-up"
-          >
+          <h3 className="text-title" data-aos="fade-up">
             Top Featured Facilities
           </h3>
           <p
@@ -105,12 +101,13 @@ const FeaturedFacilities = () => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-4" data-aos="fade-up"
-          data-aos-delay="500">
-  <button className="mt-4 button-primary">
-    See More
-  </button>
-</div>
+        <div
+          className="text-center mt-4"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <button className="mt-4 button-primary">See More</button>
+        </div>
       </div>
     </div>
   );

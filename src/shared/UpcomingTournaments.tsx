@@ -54,7 +54,7 @@ const UpcomingTournaments = () => {
   ];
 
   return (
-    <div className="dark:bg-gray-700 bg-white">
+    <div className="dark:bg-gray-900 bg-white">
       <div className="container py-16 mx-auto">
         {/* Section Heading */}
         <div className="mb-16 text-center w-1/2 mx-auto" data-aos="fade-up">

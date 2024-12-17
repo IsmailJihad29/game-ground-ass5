@@ -9,12 +9,12 @@ import MissionStatementSection from "./MissionStatementSection ";
 const AboutUs = () => {
   return (
     <div>
-      <AboutHero />
+      {/* <AboutHero /> */}
       <MissionStatementSection/>
-      <AboutTeamSection />
+      {/* <AboutTeamSection />
       <AboutHistoryAndMilestones/>
       <CommunityEngagement/>
-      <AboutContactInformation/>
+      <AboutContactInformation/> */}
     </div>
   );
 };

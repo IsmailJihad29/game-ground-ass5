@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <div
-      className="h-screen flex items-center justify-center relative px-4 md:px-12 bg-white dark:bg-gray-700 bg-cover bg-center"
+      className="h-screen flex items-center justify-center relative px-4 md:px-12 bg-white dark:bg-gray-900 bg-cover bg-center"
       style={{
         backgroundImage: `url(${hero})`,
         backgroundRepeat: "no-repeat",
@@ -114,7 +114,6 @@ const Hero = () => {
         alt="floating football"
       />
 
-      
       <img
         src={heroFootball}
         className="absolute bottom-5 right-5 w-16 h-16 md:w-24 md:h-24 animate-bounce"
