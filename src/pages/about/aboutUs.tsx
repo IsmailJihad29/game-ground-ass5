@@ -1,4 +1,5 @@
 
+
 import AboutHistoryAndMilestones from "./AboutHistoryAndMilestones";
 import AboutTeamSection from "./AboutTeamSection";
 
@@ -15,7 +16,6 @@ const AboutUs = () => {
       <AboutTeamSection />
       <AboutHistoryAndMilestones/>
     
-      
     </div>
   );
 };
