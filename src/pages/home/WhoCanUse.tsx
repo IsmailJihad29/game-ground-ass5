@@ -1,9 +1,9 @@
-import amateurPlayer from "../assets/Amateur-Players.png";
-import sportsTeamAndClub from "../assets/Sports-Teams&Clubs.png";
-import eventOrganization from "../assets/Event-Organizers.png";
-import schoolAndCollage from "../assets/school.png";
-import corporationTeam from "../assets/team.png";
-import friendsAndFamily from "../assets/friends.png";
+import amateurPlayer from "../../assets/Amateur-Players.png";
+import sportsTeamAndClub from "../../assets/Sports-Teams&Clubs.png";
+import eventOrganization from "../../assets/Event-Organizers.png";
+import schoolAndCollage from "../../assets/school.png";
+import corporationTeam from "../../assets/team.png";
+import friendsAndFamily from "../../assets/friends.png";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";

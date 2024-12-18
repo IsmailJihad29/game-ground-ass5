@@ -1,6 +1,3 @@
-
-
-
 import { useNavigate, useParams } from "react-router-dom";
 import {
   useAddBookingsMutation,
@@ -18,7 +15,7 @@ import { TFacility } from "../../types/user";
 import dayjs, { Dayjs } from "dayjs";
 import { useState } from "react";
 import { toast } from "sonner";
-import Loading from "../../shared/Loading";
+import Loading from "../shared/Loading";
 import { useAppSelector } from "../../redux/hooks";
 import { selectCurrentUser } from "../../redux/features/userSlice";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
@@ -130,8 +127,11 @@ const BookingForm = () => {
       } else {
         toast.error("An unexpected error occurred.");
       }
-    } else if (res?.data?.success && res?.data?.data?.paymentSession.payment_url) {
-      window.location.href = res.data.data.paymentSession.payment_url
+    } else if (
+      res?.data?.success &&
+      res?.data?.data?.paymentSession.payment_url
+    ) {
+      window.location.href = res.data.data.paymentSession.payment_url;
     }
   };
 
@@ -153,9 +153,7 @@ const BookingForm = () => {
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-          <h1 className="text-4xl text-white font-bold">
-            {facility?.name}
-          </h1>
+          <h1 className="text-4xl text-white font-bold">{facility?.name}</h1>
           <p className="text-2xl text-white mt-2">
             ${facility?.pricePerHour} per hour
           </p>
@@ -221,13 +219,13 @@ const BookingForm = () => {
                 </div>
 
                 <div>
-                <Button
-                  type="primary"
-                  className="w-full mt-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg"
-                  onClick={handleProceed}
-                >
-                  Proceed to Payment
-                </Button>
+                  <Button
+                    type="primary"
+                    className="w-full mt-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg"
+                    onClick={handleProceed}
+                  >
+                    Proceed to Payment
+                  </Button>
                 </div>
               </div>
             )}

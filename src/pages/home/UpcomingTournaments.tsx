@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
-import logo from "../assets/logo.png"; // Example image import
+import logo from "../../assets/logo.png"; // Example image import
 import { useNavigate } from "react-router-dom";
 
 interface Tournament {

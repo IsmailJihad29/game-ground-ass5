@@ -3,10 +3,10 @@ import { Button, Form, Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSignUPMutation } from "../redux/api/auth/authApi";
+import { useSignUPMutation } from "../../redux/api/auth/authApi";
 import { toast } from "sonner";
-import { logout, selectCurrentUser } from "../redux/features/userSlice";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { logout, selectCurrentUser } from "../../redux/features/userSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
 const Register = () => {
@@ -18,8 +18,6 @@ const Register = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const onFinish = async (values: any) => {
- 
-
     if (user) {
       setUserRole(user.role);
     }

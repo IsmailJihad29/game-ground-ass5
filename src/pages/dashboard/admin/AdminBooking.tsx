@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { useGetAllBookingsQuery } from "../../../redux/api/facility/facilityApi";
-import Loading from "../../../shared/Loading";
+import Loading from "../../shared/Loading";
 import { Table, Button, Space, Modal, Typography, Divider, Tag } from "antd";
 
 const { Title, Text } = Typography;

@@ -4,7 +4,7 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   const today = new Date().toLocaleDateString("en-US", {

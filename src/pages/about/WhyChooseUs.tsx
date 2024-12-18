@@ -12,7 +12,7 @@ import {
 
 const WhyChooseUs = () => {
   return (
-    <div className="mx-auto mt-14 mb-14" data-aos="fade-up">
+    <div className="mx-auto bg-white dark:bg-gray-900 " >
       <div className="container mx-auto text-center mb-12">
         <h2 className="text-title" data-aos="fade-up">
           Why Choose Us
@@ -155,6 +155,12 @@ const WhyChooseUs = () => {
             Committed to sustainability and community support.
           </p>
         </div>
+        
+      </div>
+      <div className="container mx-auto mt-12 text-center" data-aos="fade-up">
+        <button className="button-primary font-primary transition">
+          Explore Facilities
+        </button>
       </div>
     </div>
   );

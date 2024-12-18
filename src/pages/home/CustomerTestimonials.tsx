@@ -1,7 +1,7 @@
 import { Avatar, Carousel } from "antd";
-import { testimonialData } from "./fakeData";
-import logo from "../assets/logo.png";
-import heroFootball from "../assets/hero/heroFootball.png";
+import { testimonialData } from "../shared/fakeData";
+import logo from "../../assets/logo.png";
+import heroFootball from "../../assets/hero/heroFootball.png";
 const CustomerTestimonials = () => {
   return (
     <div className="bg-white dark:bg-gray-900 py-10 ">
@@ -33,7 +33,9 @@ const CustomerTestimonials = () => {
           {/* Card with Animation */}
           <div className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 sm:p-12 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
             {/* Floating Abstract Icons */}
-            <div className="absolute top-6 left-6 w-8 h-8  rounded-full animate-bounce"><img src={heroFootball} alt="" /></div>
+            <div className="absolute top-6 left-6 w-8 h-8  rounded-full animate-bounce">
+              <img src={heroFootball} alt="" />
+            </div>
             <div className="absolute bottom-6 right-6   rounded-full animate-pulse delay-200">
               {" "}
               <img src={logo} className="w-16 h-16 rounded-full shadow-lg" />

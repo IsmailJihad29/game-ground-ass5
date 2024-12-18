@@ -7,9 +7,9 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Avatar, Dropdown, MenuProps } from "antd";
-import logo from "../../src/assets/logo.png";
-import { logout, selectCurrentUser } from "../redux/features/userSlice";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import logo from "../../..//src/assets/logo.png";
+import { logout, selectCurrentUser } from "../../redux/features/userSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { toast } from "sonner";
 
 const Navbar = () => {
@@ -148,7 +148,6 @@ const Navbar = () => {
               >
                 Login
               </Link>
-             
             </div>
           )}
 
@@ -236,7 +235,6 @@ const Navbar = () => {
                 >
                   Login
                 </Link>
-                
               </>
             )}
           </div>

@@ -1,8 +1,6 @@
-
-
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetFacilityDetailsQuery } from "../../redux/api/facility/facilityApi";
-import Loading from "../../shared/Loading";
+import Loading from "../shared/Loading";
 
 import { FaMapMarkerAlt, FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
 
@@ -25,16 +23,15 @@ const FacilityDetails = () => {
     <div className="dark:bg-slate-600 bg-slate-50 min-h-screen">
       <div className="container mx-auto py-12 px-4">
         <div className="bg-gradient-to-r from-blue-50 to-teal-50 shadow-lg rounded-xl overflow-hidden transition transform duration-300">
-          
           {/* Hero Section */}
           <div className="relative w-full h-[450px] md:h-[600px] overflow-hidden rounded-t-xl">
             <img
               className="w-full h-full object-cover rounded-t-xl"
-              src={facility.image }
+              src={facility.image}
               alt={facility.name}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80"></div>
-            
+
             {/* Facility Info Overlay */}
             <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col md:flex-row justify-between items-end text-white">
               <div>
@@ -50,7 +47,8 @@ const FacilityDetails = () => {
                   <FaMapMarkerAlt /> {facility.location}
                 </h2>
                 <h3 className="text-lg font-semibold flex items-center gap-2 font-primary">
-                  <FaCalendarAlt /> Available: <span className="text-green-400">Yes</span>
+                  <FaCalendarAlt /> Available:{" "}
+                  <span className="text-green-400">Yes</span>
                 </h3>
               </div>
             </div>
@@ -58,10 +56,11 @@ const FacilityDetails = () => {
 
           {/* Facility Description & Booking Section */}
           <div className="p-8 space-y-10">
-            
             {/* Description */}
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold  font-title text-hero">Description</h2>
+              <h2 className="text-2xl font-bold  font-title text-hero">
+                Description
+              </h2>
               <p className="text-gray-600 text-lg leading-relaxed font-primary">
                 {facility.description}
               </p>
@@ -69,7 +68,9 @@ const FacilityDetails = () => {
 
             {/* Facility Features */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold font-title text-hero">Features</h3>
+              <h3 className="text-xl font-semibold font-title text-hero">
+                Features
+              </h3>
               <ul className="flex flex-wrap gap-6 text-lg">
                 <li className="flex items-center gap-2 text-green-600">
                   <FaCheckCircle /> Parking Available

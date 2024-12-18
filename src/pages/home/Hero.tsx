@@ -4,17 +4,17 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import "../design/heroDesign.css";
-import hero from "../assets/hero/Soccer-Ball-PNG-Clipart-Background.png";
-import heroFootball from "../assets/hero/heroFootball.png";
+import "../../design/heroDesign.css";
+import hero from "../../assets/hero/Soccer-Ball-PNG-Clipart-Background.png";
+import heroFootball from "../../assets/hero/heroFootball.png";
 
 
-import footballGround from "../assets/hero/football-ground.jpg";
-import swimingPool from "../assets/hero/swiming-pool.jpg";
-import badminton from "../assets/hero/badmintion-cort.jpg";
-import cricket from "../assets/hero/cricket-ground.jpg";
-import basketball from "../assets/hero/basketball-court.jpeg";
-import tenis from "../assets/hero/TENNIS-court.jpg";
+import footballGround from "../../assets/hero/football-ground.jpg";
+import swimingPool from "../../assets/hero/swiming-pool.jpg";
+import badminton from "../../assets/hero/badmintion-cort.jpg";
+import cricket from "../../assets/hero/cricket-ground.jpg";
+import basketball from "../../assets/hero/basketball-court.jpeg";
+import tenis from "../../assets/hero/TENNIS-court.jpg";
 
 const Hero = () => {
   const navigate = useNavigate();

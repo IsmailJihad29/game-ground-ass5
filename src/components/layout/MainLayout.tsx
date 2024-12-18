@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../../shared/Navbar";
-import Footer from "../../shared/Footer";
+import Navbar from "../../pages/shared/Navbar";
+import Footer from "../../pages/shared/Footer";
 import { FloatButton, Tooltip } from "antd";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";

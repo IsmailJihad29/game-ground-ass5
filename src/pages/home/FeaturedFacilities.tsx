@@ -1,7 +1,7 @@
-import { useGetAllFacilityQuery } from "../redux/api/facility/facilityApi";
-import logo from "../assets/logo.png";
+import { useGetAllFacilityQuery } from "../../redux/api/facility/facilityApi";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import Loading from "./Loading";
+import Loading from "../shared/Loading";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";

@@ -1,199 +1,126 @@
-
-import { ClockCircleOutlined } from "@ant-design/icons";
-import { Timeline } from "antd";
+import { useEffect } from "react";
+import {
+  FaChartBar,
+  FaUser,
+  FaFolderOpen,
+  FaSearch,
+  FaLaptop,
+} from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AboutHistoryAndMilestones = () => {
-  const timeLineOptions = [
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
+  const historyData = [
     {
-      children: (
-        <span className="text-primaryLight dark:text-primaryDark px-4">
-          2022: Vision and Ideation
-        </span>
-      ),
-      dot: (
-        <ClockCircleOutlined
-          style={{ fontSize: "20px", padding: "2px 4px", color: "#00b0ff" }}
-        />
-      ),
+      year: "2002",
+      title: "Research Phase",
+      description:
+        "We began extensive research to identify challenges and opportunities in the market. It laid the foundation for future innovations.",
+      icon: FaSearch,
+      color: "bg-gradient-to-br from-purple-500 to-indigo-500",
     },
     {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          The idea to revolutionize sports booking by integrating technology with
-          real-time availability was born.
-        </span>
-      ),
-      color: "green",
+      year: "2006",
+      title: "Project Kickoff",
+      description:
+        "The official project started with a dedicated team of developers and planners focusing on building a solid base.",
+      icon: FaFolderOpen,
+      color: "bg-gradient-to-br from-teal-400 to-green-400",
     },
     {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Initial research into user needs highlighted a lack of easy access to
-          available sports venues and activities.
-        </span>
-      ),
-      color: "green",
+      year: "2007",
+      title: "Initial Growth",
+      description:
+        "Our project gained traction with increased user engagement and positive feedback. We expanded our team and resources.",
+      icon: FaChartBar,
+      color: "bg-gradient-to-br from-orange-500 to-yellow-500",
     },
     {
-      children: (
-        <span className="text-primaryLight dark:text-primaryDark">
-          2023: Beta Launch
-        </span>
-      ),
-      dot: (
-        <ClockCircleOutlined
-          style={{ fontSize: "20px", padding: "2px 4px", color: "#00b0ff" }}
-        />
-      ),
+      year: "2014",
+      title: "Community Focus",
+      description:
+        "We shifted our focus towards building a strong community, fostering connections, and creating value for our users.",
+      icon: FaUser,
+      color: "bg-gradient-to-br from-blue-600 to-indigo-600",
     },
     {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Successfully launched a beta version with real-time booking for football
-          and cricket pitches in select cities.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Grew a loyal user base through word-of-mouth and partnered with local
-          community sports clubs.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-primaryLight dark:text-primaryDark px-4">
-          2024: AI-Powered Recommendations
-        </span>
-      ),
-      dot: (
-        <ClockCircleOutlined
-          style={{ fontSize: "20px", padding: "2px 4px", color: "#00b0ff" }}
-        />
-      ),
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Introduced AI-based recommendations for users, helping them discover new
-          sports venues and activities based on preferences and past bookings.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Partnered with fitness experts to introduce wellness programs and
-          community events within the platform.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-primaryLight dark:text-primaryDark">2025: Future Goals</span>
-      ),
-      color: "red",
-    },
-    {
-      children: (
-        <span className="text-primaryLight px-4 dark:text-primaryDark">
-          2025: Global Expansion
-        </span>
-      ),
-      dot: (
-        <ClockCircleOutlined
-          style={{ fontSize: "20px", padding: "2px 4px", color: "#00b0ff" }}
-        />
-      ),
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Expand the platform to international markets, starting with Europe and
-          Asia, and offer multi-language support.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Build strategic partnerships with international sports venues and
-          federations to grow the global user base.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-primaryLight px-4 dark:text-primaryDark">
-          2026: Advanced Community Engagement
-        </span>
-      ),
-      dot: (
-        <ClockCircleOutlined
-          style={{ fontSize: "20px", padding: "2px 4px", color: "#00b0ff" }}
-        />
-      ),
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Launch a community hub feature, allowing users to create and join sports
-          leagues, organize tournaments, and host events.
-        </span>
-      ),
-      color: "green",
-    },
-    {
-      children: (
-        <span className="text-textDark dark:text-textLight">
-          Introduce social features like live scores, leaderboards, and match
-          highlights to increase user engagement.
-        </span>
-      ),
-      color: "green",
+      year: "2018",
+      title: "Tech Revolution",
+      description:
+        "Leveraging cutting-edge technologies, we revolutionized our platform to provide unmatched performance and user experience.",
+      icon: FaLaptop,
+      color: "bg-gradient-to-br from-green-400 to-teal-500",
     },
   ];
-  
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 py-16">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold  dark:text-gray-100 font-hero text-hero">
-            Our Journey
-          </h2>
-          <p className="mt-4 text-lg  dark:text-gray-300 font-primary text-title">
-            Discover how we grew from an idea to a leading platform connecting
-            people with the best sports facilities.
-          </p>
+    <div className="py-16 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 lg:px-12">
+        {/* Title and Subtitle */}
+        <div className="w-[70%] text-center mx-auto">
+        <h2
+          className="text-title "
+          data-aos="fade-up"
+        >
+          Our Journey
+        </h2>
+        <p
+          className="text-subtitle mb-16"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Discover the milestones that shaped our story. From humble beginnings
+          to our transformation into a cutting-edge platform.
+        </p>
+
         </div>
+        {/* Journey Sections */}
+        <div className="relative">
+          {historyData.map((item, index) => (
+            <div
+              key={index}
+              className={`relative  w-[60%] mx-auto py-10 group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
+                index % 2 === 0
+                  ? "shadow-md dark:bg-gray-800 "
+                  : "shadow-md dark:bg-gray-700  "
+              }`}
+              data-aos="fade-up"
+              data-aos-delay={`${index * 200}`}
+            >
+              {/* Milestone Icon */}
+              <div
+                className={`absolute left-1/2 transform -translate-x-1/2 w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center  ${item.color} text-white text-3xl shadow-xl group-hover:scale-110 transition-transform duration-300`}
+                style={{
+                  top: "-40px",
+                  zIndex: 10,
+                }}
+              >
+                <item.icon />
+              </div>
 
-        <Timeline
-          mode="alternate"
-          items={timeLineOptions}
-          className="custom-timeline font-primary"
-        />
+              {/* Milestone Content */}
+              <div className="container mx-auto px-4 py-4 flex justify-center items-center ">
+                <div
+                  className={`w-3/4 md:w-2/3 text-center ${
+                    index % 2 === 0 ? "md:text-left" : "md:text-right"
+                  }`}
+                >
+                  <h3 className="text-hero font-hero text-4xl">{item.year}</h3>
+                  <p className="font-title text-xl text-gray-700 dark:text-white">
+                    {item.title}
+                  </p>
+                  <p className="text-subtitle">{item.description}</p>
+                </div>
+              </div>
 
-        {/* Custom CSS for improved responsiveness */}
-        <style >{`
-          .custom-timeline {
-            padding: 0 1rem;
-          }
-
-          @media (min-width: 768px) {
-            .custom-timeline {
-              padding: 0;
-            }
-          }
-        `}</style>
+              
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

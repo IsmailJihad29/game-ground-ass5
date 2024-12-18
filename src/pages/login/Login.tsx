@@ -3,9 +3,9 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../redux/hooks";
-import { useLoginMutation } from "../redux/api/auth/authApi";
-import { setToken, setUser } from "../redux/features/userSlice";
+import { useAppDispatch } from "../../redux/hooks";
+import { useLoginMutation } from "../../redux/api/auth/authApi";
+import { setToken, setUser } from "../../redux/features/userSlice";
 import { toast } from "sonner";
 
 const Login = () => {
@@ -24,7 +24,6 @@ const Login = () => {
       if (res?.data?.success) {
         toast.success(res?.data?.message, { id: toastId });
       }
-  
 
       dispatch(setUser(res.data.data));
       dispatch(setToken(res.data.token));

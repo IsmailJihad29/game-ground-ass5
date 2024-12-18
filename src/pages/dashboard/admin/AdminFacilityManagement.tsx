@@ -18,7 +18,7 @@ import {
   useUpdateFacilityMutation,
 } from "../../../redux/api/facility/facilityApi";
 import { toast } from "sonner";
-import Loading from "../../../shared/Loading";
+import Loading from "../../shared/Loading";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
 interface TFacilityData {

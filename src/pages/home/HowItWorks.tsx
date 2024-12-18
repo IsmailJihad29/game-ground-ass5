@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import step1 from "../assets/step1.png";
-import step3 from "../assets/step3.png";
-import step5 from "../assets/step5.png";
-import step7 from "../assets/step7.png";
+import step1 from "../../assets/step1.png";
+import step3 from "../../assets/step3.png";
+import step5 from "../../assets/step5.png";
+import step7 from "../../assets/step7.png";
 
 const HowItWorks = () => {
   useEffect(() => {

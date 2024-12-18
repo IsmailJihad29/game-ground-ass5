@@ -15,7 +15,7 @@ import {
   useCancelBookingMutation,
   useGetAllUserBookingQuery,
 } from "../../../redux/api/facility/facilityApi";
-import Loading from "../../../shared/Loading";
+import Loading from "../../shared/Loading";
 import { toast } from "sonner";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
@@ -32,7 +32,12 @@ const UserBooking = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
-    if (data && data.data && data.data.meta && typeof data.data.meta.total === 'number') {
+    if (
+      data &&
+      data.data &&
+      data.data.meta &&
+      typeof data.data.meta.total === "number"
+    ) {
       setTotal(data.data.meta.total);
     } else {
       setTotal(0); // Default to 0 if meta or total is undefined
@@ -142,7 +147,8 @@ const UserBooking = () => {
         <span
           className={`${
             isBooked === "confirmed" ? "text-green-500" : "text-rose-500"
-          } `}>
+          } `}
+        >
           {isBooked}
         </span>
       ),
@@ -179,10 +185,11 @@ const UserBooking = () => {
     },
   ];
 
-  const dataSource = data?.data?.result?.map((booking: any) => ({
-    key: booking._id,
-    ...booking,
-  })) || [];
+  const dataSource =
+    data?.data?.result?.map((booking: any) => ({
+      key: booking._id,
+      ...booking,
+    })) || [];
 
   const handleTableChange = (pagination: any) => {
     setPage(pagination.current);

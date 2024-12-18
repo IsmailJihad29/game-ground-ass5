@@ -1,22 +1,21 @@
-// import AboutContactInformation from "./AboutContactInformation";
-// import AboutHero from "./AboutHero";
-// import AboutHistoryAndMilestones from "./AboutHistoryAndMilestones";
-// import AboutTeamSection from "./AboutTeamSection";
-// import CommunityEngagement from "./CommunityEngagement";
+
+import AboutHistoryAndMilestones from "./AboutHistoryAndMilestones";
+import AboutTeamSection from "./AboutTeamSection";
+
 import MissionStatementSection from "./MissionStatementSection ";
-
-
+import WhyChooseUs from "./WhyChooseUs";
 
 const AboutUs = () => {
   return (
     <div>
-      {/* <AboutHero /> */}
-      <MissionStatementSection/>
 
-      {/* <AboutTeamSection />
+      <MissionStatementSection />
+      <WhyChooseUs/>
+
+      <AboutTeamSection />
       <AboutHistoryAndMilestones/>
-      <CommunityEngagement/>
-      <AboutContactInformation/> */}
+    
+      
     </div>
   );
 };
