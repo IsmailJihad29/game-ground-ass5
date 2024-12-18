@@ -162,6 +162,8 @@ const WhyChooseUs = () => {
           Explore Facilities
         </button>
       </div>
+
+      
     </div>
   );
 };
