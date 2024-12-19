@@ -1,130 +1,81 @@
 import { HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
-import type { FormProps } from "antd";
-import { Form, Input } from "antd";
-import TextArea from "antd/es/input/TextArea";
-import { toast } from "sonner";
-
-type FieldType = {
-  name?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
-};
 
 const ContactMapAndForm = () => {
-  const [form] = Form.useForm();
-
-  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-    toast.success("Successfully submitted form");
-    console.log(values);
-    form.resetFields();
-  };
-
-  const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-    toast.error("Please check your Input");
-    console.log("Failed:", errorInfo);
-  };
-
   return (
-    <div className="dark:bg-slate-800 bg-slate-100 py-16">
-      <div className="container mx-auto px-6 lg:px-12">
+    <div className="bg-white dark:bg-gray-900 py-20 sm:py-16">
+      <div className="container mx-auto px-6 lg:px-12 sm:px-4">
+        {/* Section Heading */}
+        <div className="text-center mb-12"  data-aos="fade-up"
+          data-aos-delay="300">
+          <h1 className="text-title">
+            Get in Touch
+          </h1>
+          <p className="text-subtitle">
+            We'd love to hear from you! Reach out to us for any inquiries or support.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Map Section */}
-          <div className="relative overflow-hidden shadow-lg rounded-lg">
+          <div className="relative"  data-aos="fade-right"
+          data-aos-delay="400">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.2341322716044!2d90.35345081445533!3d23.82234838455019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c139deb7b7d5%3A0x7d56d411689ba57!2sMirpur%20Shopping%20Centre!5e0!3m2!1sen!2sbd!4v1644311096102!5m2!1sen!2sbd"
-              width="100%"
-              height="450"
+              className="w-full h-[400px] rounded-2xl shadow-lg transition-transform duration-300"
+              style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              style={{ border: 0, filter: "grayscale(1)" }}
             ></iframe>
           </div>
 
-          {/* Contact Form Section */}
-          <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold text-center text-white mb-6">Get in Touch</h2>
-            <Form
-              form={form}
-              name="contact"
-              layout="vertical"
-              initialValues={{ remember: true }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-            >
-              <Form.Item
-                label="Name"
-                name="name"
-                rules={[{ required: true, message: "Please input your name!" }]}
-              >
-                <Input className="w-full rounded-md" placeholder="John Doe" />
-              </Form.Item>
-              <Form.Item
-                label="Email"
-                name="email"
-                rules={[{ required: true, message: "Please input your email!" }]}
-              >
-                <Input className="w-full rounded-md" placeholder="john@example.com" />
-              </Form.Item>
-              <Form.Item
-                label="Subject"
-                name="subject"
-                rules={[{ required: true, message: "Please input your subject!" }]}
-              >
-                <Input className="w-full rounded-md" placeholder="Subject of your message" />
-              </Form.Item>
-              <Form.Item
-                label="Message"
-                name="message"
-                rules={[{ required: true, message: "Please input your message!" }]}
-              >
-                <TextArea
-                  rows={4}
-                  className="w-full rounded-md"
-                  placeholder="Write your message here..."
-                />
-              </Form.Item>
-              <Form.Item>
-                <button
-                  type="submit"
-                  className="w-full bg-veryDarkViolet hover:bg-lightBlue text-white py-3 rounded-lg shadow-lg transition-transform transform hover:scale-105"
-                >
-                  Submit
-                </button>
-              </Form.Item>
-            </Form>
-          </div>
-        </div>
-
-        {/* Contact Information Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-16 mt-16 text-center">
-          {/* Phone */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg flex items-center justify-center space-x-4">
-            <PhoneOutlined className="text-3xl text-strongCyan" />
-            <div>
-              <p className="text-xl font-semibold text-gray-900 dark:text-white">Phone</p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">+123 456 7890</p>
+          {/* Contact Info Section */}
+          <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 space-y-4"  data-aos="fade-left"
+          data-aos-delay="500">
+            {/* Phone Info */}
+            <div className="flex items-center space-x-6 ">
+              <div className="p-2 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 text-white">
+                <PhoneOutlined className="text-3xl" />
+              </div>
+              <div>
+                <p className="font-title text-hero text-xl">Phone</p>
+                <p className="text-gray-700 dark:text-white font-primary text-lg">+8801878850591</p>
+              </div>
             </div>
-          </div>
 
-          {/* Email */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg flex items-center justify-center space-x-4">
-            <MailOutlined className="text-3xl text-strongCyan" />
-            <div>
-              <p className="text-xl font-semibold text-gray-900 dark:text-white">Email</p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">support@domain.com</p>
+            {/* Email Info */}
+            <div className="flex items-center space-x-6">
+              <div className="p-2 rounded-full bg-gradient-to-r from-teal-400 to-teal-600 text-white">
+                <MailOutlined className="text-3xl" />
+              </div>
+              <div>
+                <p className="font-title text-hero text-xl">Email</p>
+                <p className="text-gray-700 dark:text-white font-primary text-lg">support@domain.com</p>
+              </div>
             </div>
-          </div>
 
-          {/* Address */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg flex items-center justify-center space-x-4">
-            <HomeOutlined className="text-3xl text-strongCyan" />
-            <div>
-              <p className="text-xl font-semibold text-gray-900 dark:text-white">Address</p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                456 Elm Street,
-                <br /> City, Country 12345
+            {/* Address Info */}
+            <div className="flex items-center space-x-6">
+              <div className="p-2 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white">
+                <HomeOutlined className="text-3xl" />
+              </div>
+              <div>
+                <p className="font-title text-hero text-xl">Address</p>
+                <p className="text-gray-700 dark:text-white font-primary text-lg">
+                  456 Elm Street,  City, Country 12345
+                </p>
+              </div>
+            </div>
+
+            {/* Additional Info */}
+            <div className="mt-6">
+              <h3 className="font-title text-hero text-xl">
+                Business Hours
+              </h3>
+              <p className="text-gray-700 dark:text-white font-primary text-sm">
+                Monday - Friday: 9:00 AM - 6:00 PM
               </p>
+              <p className="text-gray-700 dark:text-white font-primary text-sm">Saturday: 10:00 AM - 4:00 PM</p>
+              <p className="text-gray-700 dark:text-white font-primary text-sm">Sunday: Closed</p>
             </div>
           </div>
         </div>

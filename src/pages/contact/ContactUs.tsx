@@ -1,11 +1,13 @@
-import ContactHero from "./ContactHero";
 import ContactMapAndForm from "./ContactMapAndForm";
+import FAQuestions from "./FAQuestions";
+
 
 const ContactUs = () => {
   return (
     <div>
-      <ContactHero />
+      
       <ContactMapAndForm />
+      <FAQuestions/>
     </div>
   );
 };

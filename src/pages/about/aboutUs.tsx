@@ -1,5 +1,3 @@
-
-
 import AboutHistoryAndMilestones from "./AboutHistoryAndMilestones";
 import AboutTeamSection from "./AboutTeamSection";
 
@@ -9,13 +7,10 @@ import WhyChooseUs from "./WhyChooseUs";
 const AboutUs = () => {
   return (
     <div>
-
       <MissionStatementSection />
-      <WhyChooseUs/>
-
       <AboutTeamSection />
-      <AboutHistoryAndMilestones/>
-    
+      <WhyChooseUs />
+      <AboutHistoryAndMilestones />
     </div>
   );
 };
