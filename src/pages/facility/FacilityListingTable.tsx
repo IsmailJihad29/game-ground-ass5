@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { AutoComplete, Input, Pagination, Select } from "antd";
-
 import { useGetAllFacilityQuery } from "../../redux/api/facility/facilityApi";
 import { useNavigate } from "react-router-dom";
 import NoDataFound from "../shared/NoDataFound";
@@ -10,6 +9,8 @@ import circle from "../../assets/circle.svg";
 import grid from "../../assets/grid.svg";
 import Loading from "../shared/Loading";
 import useDebounce from "../../hooks/useDebounce";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 interface TFacilities {
   index: number;
@@ -48,6 +49,7 @@ const FacilityListingTable = () => {
     if (!isFetching && facilities) {
       setTotal(facilities?.meta?.total);
     }
+    AOS.init({ duration: 800, once: true });
   }, [isFetching, facilities]);
 
   const [searchItem, setSearchItem] = useState(false);
@@ -77,13 +79,13 @@ const FacilityListingTable = () => {
   }
 
   return (
-    <div className="dark:bg-slate-500">
+    <div className="bg-white dark:bg-gray-900">
       <div className="container mx-auto py-16">
-        <div className="mb-16 text-center">
-          <h3 className="text-3xl font-extrabold  mb-4 font-title text-title">
+        <div className="mb-16 text-center" data-aos="fade-up">
+          <h3 className="text-title">
             Explore Premium Sports Venues
           </h3>
-          <p className="text-lg px-12 max-w-3xl mx-auto text-gray-700 font-light font-primary leading-relaxed">
+          <p className="text-subtitle">
             Find the perfect facility for your sports event with our advanced
             search and filter options. Easily compare prices and choose venues
             that fit your budget and preferences.
@@ -91,7 +93,7 @@ const FacilityListingTable = () => {
         </div>
 
         {/* Search and Filter */}
-        <div className="my-8 flex justify-end gap-4">
+        <div className="my-8 flex justify-end gap-4" data-aos="fade-up">
           <Select
             style={{ height: "40px", width: "250px" }}
             placeholder="Search, Filter or Sort"
@@ -115,11 +117,15 @@ const FacilityListingTable = () => {
 
         {/* Card Section */}
         <div>
-          <div className="flex flex-row mx-auto flex-wrap justify-center items-center gap-16">
+          <div
+            className="flex flex-row mx-auto flex-wrap justify-center items-center gap-16"
+            data-aos="fade-up"
+          >
             {facilityData?.map((item: TFacilities, index: number) => (
               <div
                 key={index}
                 className="w-[270px] relative transform transition duration-300 hover:scale-105"
+                data-aos="zoom-in"
               >
                 <div className="group relative overflow-hidden w-[270px] h-[350px] bg-slate-300 rounded-3xl shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:rotate-1 hover:-translate-y-2">
                   <img
@@ -129,21 +135,21 @@ const FacilityListingTable = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white rounded-t-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <p className="font-bold text-center text-darkViolet text-xl font-primary text-title">
-                      ${item.pricePerHour}
-                    </p>
-                    <p className="text-gray-500 text-center font-title text-hero">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-white dark:bg-gray-800 rounded-t-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <p className="text-gray-500 text-center font-title text-hero text-xl">
                       {item.name.substring(0, 20)}
                     </p>
-                    <p className="text-center py-4 px-6 text-lightBlue dark:text-strongCyan font-primary text-title">
+                    <p className="font-semibold text-center  text-lg font-primary text-hero">
+                      ${item.pricePerHour}
+                    </p>
+                    <p className="text-center py-4 px-6  text-gray-700 dark:text-white font-primary ">
                       {item.description.length > 50
                         ? `${item.description.substring(0, 50)}...`
                         : item.description}
                     </p>
                     <button
                       onClick={() => navigate(`/facility-listing/${item._id}`)}
-                      className="relative border  z-10 mx-auto w-full text-center py-3 px-6 bg-gradient-to-r from-strongCyan to-lightBlue text-hero font-semibold rounded-full shadow-lg transition-transform duration-300 hover:from-lightBlue hover:to-strongCyan hover:scale-105 hover:shadow-xl transform active:scale-95"
+                      className="button-secondary w-full"
                     >
                       View Details
                     </button>
@@ -178,9 +184,26 @@ const FacilityListingTable = () => {
             }}
             showSizeChanger
             showTotal={(total) => `Total ${total} items`}
+            className="text-gray-700 dark:text-white pagination-dark-mode"
           />
         </div>
       </div>
+
+      <style>
+        {`
+          .pagination-dark-mode .ant-pagination-item {
+            color: #fff !important;
+          }
+          .pagination-dark-mode .ant-pagination-item-active {
+            background: #1a202c !important;
+            border-color: #1a202c !important;
+          }
+          .pagination-dark-mode .ant-pagination-prev,
+          .pagination-dark-mode .ant-pagination-next {
+            color: #fff !important;
+          }
+        `}
+      </style>
     </div>
   );
 };
