@@ -2,15 +2,15 @@
 import { AutoComplete, Input, Pagination, Select } from "antd";
 import { useGetAllFacilityQuery } from "../../redux/api/facility/facilityApi";
 import { useNavigate } from "react-router-dom";
-import NoDataFound from "../shared/NoDataFound";
 import { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import circle from "../../assets/circle.svg";
 import grid from "../../assets/grid.svg";
-import Loading from "../shared/Loading";
+
 import useDebounce from "../../hooks/useDebounce";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import Loading from "../shared/Loading";
 
 interface TFacilities {
   index: number;
@@ -71,11 +71,11 @@ const FacilityListingTable = () => {
   };
 
   if (facilityData?.length === 0) {
-    return <NoDataFound />;
+    return <Loading/>
   }
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading/>
   }
 
   return (
