@@ -2,7 +2,6 @@ import {
   FaHandsHelping,
   FaGlobe,
   FaTrophy,
-
   FaUsers,
   FaLeaf,
   FaRocket,
@@ -44,10 +43,10 @@ const MissionStatementSection = () => {
       </div>
 
       {/* Mission Cards */}
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-[70%]">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-[70%]">
         {/* Purpose */}
         <div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-purple-500"
           data-aos="zoom-in"
         >
           <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-purple-600 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -64,7 +63,7 @@ const MissionStatementSection = () => {
 
         {/* Values */}
         <div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-green-500"
           data-aos="zoom-in"
           data-aos-delay="200"
         >
@@ -82,7 +81,7 @@ const MissionStatementSection = () => {
 
         {/* Vision */}
         <div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-yellow-500"
           data-aos="zoom-in"
           data-aos-delay="400"
         >
@@ -100,7 +99,7 @@ const MissionStatementSection = () => {
 
         {/* New Section 1: Innovation */}
         <div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-indigo-500"
           data-aos="zoom-in"
           data-aos-delay="500"
         >
@@ -118,7 +117,7 @@ const MissionStatementSection = () => {
 
         {/* New Section 2: Community */}
         <div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-teal-500"
           data-aos="zoom-in"
           data-aos-delay="600"
         >
@@ -136,7 +135,7 @@ const MissionStatementSection = () => {
 
         {/* New Section 3: Sustainability */}
         <div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-red-500"
           data-aos="zoom-in"
           data-aos-delay="700"
         >
@@ -153,13 +152,11 @@ const MissionStatementSection = () => {
         </div>
       </div>
 
-
-
-      <div className=" w-[90%] md:w-[70%] mx-auto mt-14" data-aos="zoom-in">
+      <div className=" w-[90%] md:w-[70%] mx-auto mt-14 " data-aos="zoom-in">
         <div className="absolute -top-8 -left-8 w-36 h-36 bg-gradient-to-br from-blue-400 to-blue-500 opacity-20 rounded-full blur-3xl -z-10 animate-pulse"></div>
         <div className="absolute -bottom-8 -right-8 w-36 h-36 bg-gradient-to-br from-green-400 to-green-500 opacity-20 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
-        <div className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 sm:p-12 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+        <div className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 sm:p-12 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden border border-transparent hover:border-blue-400">
           <div className="absolute top-6 left-6 w-8 h-8  rounded-full animate-bounce">
             <img src={heroFootball} alt="" />
           </div>
@@ -172,7 +169,7 @@ const MissionStatementSection = () => {
               <FaQuoteLeft />
             </div>
 
-            <blockquote className="text-lg sm:text-2xl italic font-light text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            <blockquote className="text-lg sm:text-2xl font-bold text-hero  leading-relaxed max-w-3xl mx-auto font-hero ">
               "Great things are done when men and mountains meet."
             </blockquote>
 
@@ -180,13 +177,13 @@ const MissionStatementSection = () => {
               <FaQuoteRight />
             </div>
 
-            <p className="mt-6 font-bold text-blue-600 text-lg sm:text-xl tracking-widest animate-fade-in">
+            <p className="mt-6 font-bold font-title text-hero text-lg sm:text-xl tracking-widest animate-fade-in">
               - William Blake
             </p>
           </div>
         </div>
       </div>
- <SectionDevider/>
+      <SectionDevider />
     </div>
   );
 };

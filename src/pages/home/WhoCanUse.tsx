@@ -67,37 +67,7 @@ const WhoCanUse = () => {
         {/* User Types Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-20 w-[70%] md:w-full md:gap-5  mx-auto">
           {whoCanUseData.map((item, index) => (
-            //    <div
-            //    key={index}
-            //    className="relative flex flex-col items-center bg-white dark:bg-neutral-800 rounded-lg shadow-lg  transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-blue-500"
-            //    style={{
-            //      borderBottom: '4px solid transparent',
-            //      borderImage: 'linear-gradient(to right, #42A5F5, #66BB6A)',
-            //      borderImageSlice: 1,
-
-            //    }}
-            //    data-aos="fade-up"
-            //    data-aos-delay={index * 100}
-            //  >
-            //    {/* Image Overlap */}
-            //    <div className="relative -mt-12 w-24 h-24 bg-white rounded-lg shadow-md border-4 border-white ">
-            //      <img
-            //        src={item.image}
-            //        alt={item.name}
-            //        className="w-full h-full object-cover"
-            //      />
-            //    </div>
-
-            //    {/* Content */}
-            //    <div className="p-6 text-center">
-            //      <h4 className="text-lg  font-semibold font-title text-hero   dark:text-white mb-2">
-            //        {item.name}
-            //      </h4>
-            //      <p className="text-sm font-primary text-neutral-600 dark:text-neutral-300">
-            //        {item.title}
-            //      </p>
-            //    </div>
-            //  </div>
+           
             <div
               key={index}
               className="relative flex flex-col items-center   hover:scale-105 hover:shadow-neutral-300 dark:hover:scale-110 dark:hover:shadow-xl  bg-white dark:bg-gray-800 rounded-2xl shadow-lg  text-center  group transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
