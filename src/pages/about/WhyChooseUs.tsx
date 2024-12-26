@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[70%] mx-auto">
         {/* Reason 1 */}
         <div
-          className="flex items-center space-x-4 p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800 ease-in-out transform hover:scale-105 group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          className="flex items-center space-x-4 p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800 ease-in-out transform hover:scale-105 group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-transparent hover:border-sky-400"
           data-aos="fade-up"
           data-aos-delay="100"
         >
