@@ -45,25 +45,25 @@ const FAQuestions = () => {
   }, []);
 
   return (
-    <div className="relative bg-white dark:bg-gray-900 py-12 md:py-20">
+    <div className="relative bg-white dark:bg-gray-900  md:py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center gap-10">
         {/* Left Side: FAQ Image */}
         <div
           className="w-full md:w-1/2"
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-duration="1000"
         >
           <img
             src={faQuestion}
             alt="FAQ Illustration"
-            className="w-[90%] sm:w-[80%] mx-auto rounded-lg"
+            className="w-[80%] sm:w-[70%] mx-auto rounded-lg"
           />
         </div>
 
         {/* Right Side: FAQ Section */}
         <div
           className="w-full md:w-1/2 bg-white dark:bg-gray-800 p-6 md:p-8 lg:p-12 rounded-2xl shadow-2xl"
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-duration="1000"
         >
           <h2

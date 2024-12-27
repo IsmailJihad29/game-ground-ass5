@@ -1,9 +1,10 @@
 import { HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import SectionDevider from "../shared/SectionDevider";
 
 const ContactMapAndForm = () => {
   return (
     <div className="bg-white dark:bg-gray-900 py-20 sm:py-16">
-      <div className="container mx-auto px-6 lg:px-12 sm:px-4">
+      <div className="container mx-auto px-6 lg:px-12 sm:px-4 mb-20">
         {/* Section Heading */}
         <div className="text-center mb-12"  data-aos="fade-up"
           data-aos-delay="300">
@@ -80,6 +81,7 @@ const ContactMapAndForm = () => {
           </div>
         </div>
       </div>
+      <SectionDevider/>
     </div>
   );
 };
