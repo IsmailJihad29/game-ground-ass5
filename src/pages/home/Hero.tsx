@@ -15,6 +15,7 @@ import badminton from "../../assets/hero/badmintion-cort.jpg";
 import cricket from "../../assets/hero/cricket-ground.jpg";
 import basketball from "../../assets/hero/basketball-court.jpeg";
 import tenis from "../../assets/hero/TENNIS-court.jpg";
+import SectionDevider from "../shared/SectionDevider";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -28,8 +29,9 @@ const Hero = () => {
   ];
 
   return (
-    <div
-      className="h-screen flex items-center justify-center relative px-4 md:px-12 bg-white dark:bg-gray-900 bg-cover bg-center"
+  <div className="bg-white dark:bg-gray-900">
+      <div
+      className="h-screen flex items-center justify-center relative px-4 md:px-12  bg-cover bg-center"
       style={{
         backgroundImage: `url(${hero})`,
         backgroundRepeat: "no-repeat",
@@ -61,7 +63,7 @@ const Hero = () => {
               Book Now
             </button>
             <button
-              onClick={() => navigate("/contact")}
+              onClick={() => navigate("/contact-us")}
               className="button-secondary  "
             >
               Contact Us
@@ -121,6 +123,8 @@ const Hero = () => {
         alt=""
       />
     </div>
+    <SectionDevider/>
+  </div>
   );
 };
 

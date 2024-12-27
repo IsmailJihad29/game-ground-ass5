@@ -11,6 +11,7 @@ import useDebounce from "../../hooks/useDebounce";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import Loading from "../shared/Loading";
+import SectionDevider from "../shared/SectionDevider";
 
 interface TFacilities {
   index: number;
@@ -204,6 +205,7 @@ const FacilityListingTable = () => {
           }
         `}
       </style>
+      <SectionDevider/>
     </div>
   );
 };

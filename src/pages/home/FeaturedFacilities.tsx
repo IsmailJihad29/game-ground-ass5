@@ -5,6 +5,7 @@ import Loading from "../shared/Loading";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
+import SectionDevider from "../shared/SectionDevider";
 
 interface TFacilities {
   index: number;
@@ -103,12 +104,13 @@ const FeaturedFacilities = () => {
         </div>
         <div
           className="text-center mt-4"
-          data-aos="fade-up"
+          data-aos="fade-right"
           data-aos-delay="500"
         >
           <button onClick={()=>navigate(`/facility-listing`)} className="mt-4 button-primary">See More</button>
         </div>
       </div>
+      <SectionDevider/>
     </div>
   );
 };

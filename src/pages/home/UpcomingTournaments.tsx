@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import logo from "../../assets/logo.png"; // Example image import
 import { useNavigate } from "react-router-dom";
+import SectionDevider from "../shared/SectionDevider";
 
 interface Tournament {
   id: string;
@@ -113,6 +114,7 @@ const UpcomingTournaments = () => {
           </div>
         </div>
       </div>
+      <SectionDevider/>
     </div>
   );
 };

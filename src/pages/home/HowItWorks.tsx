@@ -5,6 +5,7 @@ import step1 from "../../assets/step1.png";
 import step3 from "../../assets/step3.png";
 import step5 from "../../assets/step5.png";
 import step7 from "../../assets/step7.png";
+import SectionDevider from "../shared/SectionDevider";
 
 const HowItWorks = () => {
   useEffect(() => {
@@ -164,6 +165,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
+      <SectionDevider/>
     </div>
   );
 };

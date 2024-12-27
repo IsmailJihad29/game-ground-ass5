@@ -7,6 +7,7 @@ import friendsAndFamily from "../../assets/friends.png";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
+import SectionDevider from "../shared/SectionDevider";
 
 const whoCanUseData = [
   {
@@ -49,8 +50,9 @@ const WhoCanUse = () => {
   }, []);
 
   return (
-    <div className="bg-white  dark:bg-gray-900 py-20 ">
-      <div className="container mx-auto px-6 lg:px-20">
+    <div className="bg-white  dark:bg-gray-900 py-10  ">
+      
+      <div className="container mx-auto px-6 lg:px-20 mb-20">
         {/* Header */}
         <div
           className="text-center mb-20"
@@ -100,7 +102,9 @@ const WhoCanUse = () => {
             </div>
           ))}
         </div>
+
       </div>
+      <SectionDevider/>
     </div>
   );
 };
