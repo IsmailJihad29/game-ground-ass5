@@ -34,6 +34,7 @@ const router = createBrowserRouter([
           <>
             <Hero />
             <FeaturedFacilities />
+            <FacilityListing/>
             <WhoCanUse />
             <HowItWorks />
             <UpcomingTournaments />

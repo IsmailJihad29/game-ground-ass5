@@ -106,7 +106,7 @@ const FeaturedFacilities = () => {
           data-aos="fade-up"
           data-aos-delay="500"
         >
-          <button className="mt-4 button-primary">See More</button>
+          <button onClick={()=>navigate(`/facility-listing`)} className="mt-4 button-primary">See More</button>
         </div>
       </div>
     </div>
