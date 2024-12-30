@@ -201,7 +201,7 @@ const BookingForm = () => {
                     <TimePicker
                       value={startTimeValue}
                       onChange={onChangeStartTime}
-                      format="HH:mm"
+                      format="HH"
                       className="w-full p-3 border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
                     />
                   </div>
@@ -212,7 +212,7 @@ const BookingForm = () => {
                     <TimePicker
                       value={endTimeValue}
                       onChange={onChangeEndTime}
-                      format="HH:mm"
+                      format="HH"
                       className="w-full p-3 border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200"
                     />
                   </div>
